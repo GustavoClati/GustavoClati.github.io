@@ -1,0 +1,24 @@
+img {
+  max-width: 100%;
+  display: block;
+}
+
+* {
+  font-family: "Playfair Display", sans-serif;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.subtitulo {
+  color: #e0e0e0;
+  font-family: Playfair Display;
+  font-size: 144px;
+  font-weight: 700;
+  line-height: 144px;
+  text-transform: uppercase;
+  word-break: break-all;
+  width: 391px;
+}
+

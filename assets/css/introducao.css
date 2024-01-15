@@ -1,0 +1,61 @@
+.principal {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 100px;
+  padding: 0 40px;
+  margin-bottom: 120px;
+}
+.principal--titulo {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 80px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.principal--titulo::before {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url(../img/decoracao.png) center no-repeat;
+  position: absolute;
+  top: -15px;
+  left: -40px;
+  z-index: -1;
+}
+.principal--loc {
+  color: #525252;
+  font-family: Fira Sans;
+  font-size: 24px;
+  font-weight: 400;
+}
+@media (max-width:1000px){
+  .principal img{
+    display: none;
+  }
+  .principal{
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .principal--titulo{
+    margin-top: 60px;
+  }
+}
+@media (max-width:650px){
+  .principal--titulo{
+    font-size: 40px;
+    line-height: normal;
+  }
+  .principal--titulo::before{
+    width: 30px;
+    height: 10px;
+    left: 0;
+    top: 0;
+  }
+  .principal--loc{
+    font-size: 23px;
+  }
+}

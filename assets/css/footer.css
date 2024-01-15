@@ -1,0 +1,77 @@
+.footer--container {
+  background-color: #000;
+}
+.footer--texto {
+  color: #ccc;
+  font-family: Fira Sans;
+  font-size: 24px;
+  line-height: 32px;
+  width: 429px;
+}
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 40px 40px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 10px 400px;
+}
+.footer--contato {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer--contato a {
+  color: #fff;
+  font-family: Fira Sans;
+  font-size: 36px;
+  font-weight: 700;
+  transition: 0.5s;
+}
+.footer--contato a:hover{
+  color: #701cda;
+}
+.copyright {
+  color: #8f8f8f;
+  font-family: Fira Sans;
+  font-size: 18px;
+  margin-top: 150px;
+}
+@media (max-width:1220px){
+  .footer{
+    gap: 10px 100px;
+  }
+}
+@media (max-width:1000px){
+  .footer{
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 50px;
+  }
+  .footer--texto{
+    text-align: center;
+  }
+  .footer--contato a{
+    font-size: 30px;
+    text-align: center;
+  }
+  .copyright{
+    margin-top: 40px;
+  }
+}
+@media (max-width:650px){
+  .footer{
+    gap: 40px;
+  }
+  .footer--texto{
+    font-size: 18px;
+    width: fit-content;
+  }
+  .footer--contato a{
+    font-size: 30px;
+  }
+  .copyright{
+    margin-top: 20px;
+  }
+}
