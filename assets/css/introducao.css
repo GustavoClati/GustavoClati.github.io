@@ -32,30 +32,37 @@
   font-size: 24px;
   font-weight: 400;
 }
-@media (max-width:1000px){
+@media (max-width: 1000px) {
+  .principal{
+    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .principal--titulo{
+    font-size: 52px;
+  }
+}
+@media (max-width:900px){
   .principal img{
     display: none;
   }
   .principal{
-    grid-template-columns: 1fr;
+    margin-top: 150px;
     justify-items: center;
-  }
-  .principal--titulo{
-    margin-top: 60px;
+    grid-template-columns: 1fr;
   }
 }
-@media (max-width:650px){
-  .principal--titulo{
+@media (max-width: 460px) {
+  .principal--titulo {
     font-size: 40px;
     line-height: normal;
   }
-  .principal--titulo::before{
+  .principal--titulo::before {
     width: 30px;
     height: 10px;
     left: 0;
     top: 0;
   }
-  .principal--loc{
+  .principal--loc {
     font-size: 23px;
   }
 }
