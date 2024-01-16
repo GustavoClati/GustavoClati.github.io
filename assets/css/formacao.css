@@ -140,10 +140,13 @@
 }
 @media (max-width:800px){
   .formacao{
-    padding-top: 0;
+    padding: 0 40px;
+    gap: 10px;
   }
   .formacao .subtitulo{
     font-size: 80px;
+    height: 90px;
+    margin-bottom: 20px;
   }
   .formacao{
     gap: 10px;
