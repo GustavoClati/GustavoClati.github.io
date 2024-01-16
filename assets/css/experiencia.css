@@ -75,8 +75,6 @@
   border-radius: 5px;
   padding: 10px 15px;
   transition: 0.5s;
-  height: fit-content;
-  flex: 1;
   text-align: center;
 }
 .html:hover {
@@ -118,9 +116,6 @@
   .empresa-ano {
     display: none;
   }
-  .empresa--tags{
-    align-items: center;
-  }
 }
 @media (max-width: 800px) {
   .experiencia {
@@ -142,9 +137,13 @@
   .experiencia--texto {
     width: fit-content;
     font-size: 18px;
-    margin-bottom: 40px;
+    margin-bottom: 40px;  }
+}
+@media (max-width:500px){
+  .empresa--tags li{
+    flex: 1;
   }
-  .empresa--tags {
-    align-items: center;
+  .experiencia--empresa{
+    padding: 45px;
   }
 }
