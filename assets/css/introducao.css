@@ -55,17 +55,17 @@
   .principal {
     justify-items: left;
   }
-}
-@media (max-width: 460px) {
-  .principal--titulo {
-    font-size: 46px;
-    line-height: normal;
-  }
   .principal--titulo::before {
     width: 30px;
     height: 10px;
     left: 0;
     top: 0;
+  }
+}
+@media (max-width: 460px) {
+  .principal--titulo {
+    font-size: 46px;
+    line-height: normal;
   }
   .principal--loc {
     font-size: 23px;

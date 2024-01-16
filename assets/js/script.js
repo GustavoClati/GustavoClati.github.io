@@ -2,50 +2,55 @@ document.addEventListener("DOMContentLoaded", function () {
   const menu = document.getElementById("menu");
   const mobile = document.getElementById("menu--mobile");
 
-  // Adiciona um evento de clique ao elemento 'menu--mobile'
   mobile.addEventListener("click", function () {
-    // Verifica se a largura da tela é menor ou igual a 500 pixels
-    if (window.innerWidth <= 500) {
-      // Altera a visibilidade do menu
-      if (menu.style.transform === "translateY(0%)") {
-        menu.style.transform = "translateY(-100%)";
-        // Restaura o ícone do menu ao formato original (hambúrguer)
-        restoreMenuIcon();
-      } else {
-        menu.style.transform = "translateY(0%)";
-        // Transforma o ícone do menu para o formato de "X"
-        transformMenuIcon();
-      }
+    toggleMenu();
+  });
+
+  window.addEventListener("scroll", function () {
+    if (window.innerWidth <= 500 && menu.style.transform === "translateY(0%)") {
+      toggleMenu();
     }
   });
 
-  function transformMenuIcon() {
-    // Adiciona uma classe para controlar a cor dos spans
-    mobile.classList.add("menu-opened");
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 500) {
+      restoreMenuIcon();
+      menu.style.transform = "none";
+    }
+  });
 
-    // Muda as propriedades dos spans para formar o "X"
-    mobile.children[0].style.transform = "rotate(-45deg) translate(-8px, 6px)";
-    mobile.children[1].style.opacity = "0";
-    mobile.children[2].style.transform = "rotate(45deg) translate(-8px, -6px)";
+  function toggleMenu() {
+    if (menu.style.transform === "translateY(0%)") {
+      menu.style.transform = "translateY(-100%)";
+    } else {
+      menu.style.transform = "translateY(0%)";
+    }
+    toggleMenuIcon();
+  }
+
+  function toggleMenuIcon() {
+    const spans = mobile.getElementsByTagName("span");
+
+    if (mobile.classList.contains("menu-opened")) {
+      spans[0].style.transform = "none";
+      spans[1].style.opacity = "1";
+      spans[2].style.transform = "none";
+    } else {
+      spans[0].style.transform = "rotate(-45deg) translate(-8px, 6px)";
+      spans[1].style.opacity = "0";
+      spans[2].style.transform = "rotate(45deg) translate(-8px, -6px)";
+    }
+
+    mobile.classList.toggle("menu-opened");
   }
 
   function restoreMenuIcon() {
-    // Remove a classe para voltar à cor original
+    const spans = mobile.getElementsByTagName("span");
+
+    spans[0].style.transform = "none";
+    spans[1].style.opacity = "1";
+    spans[2].style.transform = "none";
+
     mobile.classList.remove("menu-opened");
-
-    // Restaura as propriedades dos spans para o formato original (hambúrguer)
-    mobile.children[0].style.transform = "none";
-    mobile.children[1].style.opacity = "1";
-    mobile.children[2].style.transform = "none";
   }
-
-  // Adiciona um evento de rolagem para fechar o menu quando o usuário rolar pela página
-  window.addEventListener("scroll", function () {
-    // Verifica se o menu está aberto e o fecha
-    if (window.innerWidth <= 500 && menu.style.transform === "translateY(0%)") {
-      menu.style.transform = "translateY(-100%)";
-      // Restaura o ícone do menu ao formato original (hambúrguer)
-      restoreMenuIcon();
-    }
-  });
 });
