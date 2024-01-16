@@ -135,6 +135,7 @@
   .formacao .subtitulo{
     width: 100%;
     font-size: 100px;
+    color: #FFF;
   }
 }
 @media (max-width:800px){
