@@ -33,22 +33,27 @@
   font-weight: 400;
 }
 @media (max-width: 1000px) {
-  .principal{
+  .principal {
     gap: 50px;
     grid-template-columns: 1fr 1fr;
   }
-  .principal--titulo{
+  .principal--titulo {
     font-size: 52px;
   }
 }
-@media (max-width:900px){
-  .principal img{
+@media (max-width: 900px) {
+  .principal img {
     display: none;
   }
-  .principal{
+  .principal {
     margin-top: 150px;
     justify-items: center;
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .principal {
+    justify-items: left;
   }
 }
 @media (max-width: 460px) {
